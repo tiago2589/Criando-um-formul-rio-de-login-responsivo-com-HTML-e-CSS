@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap');
+
+* {padding: 0; margin: 0; border: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
+
+body {
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+    background-repeat: no-repeat;
+    min-height: 100vh; /* view height medida responsiva toma 100% da tela */
+    display: flex;
+    min-width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+main.container {
+    background: white;
+    max-width: 350px;
+    min-height: 40vh;
+    padding: 2rem;
+    box-shadow: 5px 5px 15px rgb(0, 0, 0.2);/* sombra nas bordas */
+    border-radius: 8px; /* canto arredondado */
+}
+main h2 {
+    font-weight: 600;
+    margin-bottom: 2rem;
+    position: relative;/* position pai relativo pra position absolute da linha before funcionar */
+}
+main h2::before{ /* before = antes de... LINHA ROXA NO NOME DEBAIXO DO LOGIN*/
+    content: '';
+    position: absolute; /* posicao absoluta */
+    height: 4px;
+    width: 25px;
+    bottom: 3px;
+    left: 0;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+}
+form{ /* caixinhas do formulario, flex para ficar um do lado do outro em colunas */
+    display: flex;
+    flex-direction: column;
+}
+.input-field {
+    position: relative;
+}
+form .input-field:first-child{/* em form na classe input-fiel:pego o primeiro filho e dou uma margem bottom */
+    margin-bottom: 1.5rem;
+}
+.input-field .underline::before{/* before = antes de.. linha antes do name. */
+    content: '';
+    position: absolute;/* em relação ao pai que é relativo */
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2); /* opacidade cinza leve */
+}
+.input-field .underline::after{/* after = depois de.. linha ddepois do password */
+    content: '';
+    position: absolute;/* em relação ao pai que é relativo */
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+    transform: scaleX(0);/* comando scaleX 0 = no eixo X ele nao vai aparecer o efeito quando eu clicar */
+    transition: all 0.3s ease-in-out;/* comando q transita as cores, efeito movimento */
+    transform-origin: left; /* comando para começar o movimento/efeito das cores da esquerda  */
+}
+.input-field input:focus ~ .underline::after{/* focus = em foco/ativo (~)= pegar a proxima classe */
+    transform: scaleX(1);/* comando scaleX 1 = no eixo X ele vai aparecer o efeito quando eu clicar */
+}
+.input-field input {
+    outline: none; /* é a borda da caixa do form */
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.7);
+}
+.input-field input::placeholder { /* nome dentro do input/caixa onde escreve */
+    color: rgba(0, 0, 0, 0.5);
+}
+form input[type="submit"]{ /* Botao Continue */
+    background: linear-gradient(to left, #4776e6, #8e54e9);
+    margin-top: 2rem;
+    cursor: pointer;
+    color: white;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 300;
+    padding: 0.4rem;
+    transition: all 0.3s ease;/* comando q transita as cores, efeito movimento */
+}
+form input[type="submit"]:hover{ /* Botao Continue hover */
+    letter-spacing: 0.5px;
+    background: linear-gradient(to right, #4776e6, #8e54e9);
+}
+.footer{ /* redes sociais */
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+.footer span{ /* texto redes sociais */
+    color: rgba(0, 0, 0, 0.7); /* opacidade */
+    font-size: 0.8rem;
+    text-align: center;
+}
+.footer .social-field{/* campo da rede social */
+    padding: 0.4rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    width: 100%;
+    cursor: pointer; /* pra ficar a mão */
+    margin-top: 1rem;
+}
+.footer .social-field a{/* campo da rede social link*/
+    text-decoration: none;
+    color: white;
+}
+.footer .social-field.twitter{/* campo da rede social twitter*/
+    background: linear-gradient(to right, #56a7f2, #468aca);
+}
+.footer .social-field.twitter:hover{/* campo da rede social twitter hover*/
+    background: linear-gradient(to left, #56a7f2, #468aca );
+    letter-spacing: 0.3px; /* letter-spacing: espaçamento entre letras: */
+}
+.footer .social-field.facebook{/* campo da rede social facebook*/
+    background: linear-gradient(to right, #1e3c72, #355d94);
+}
+.footer .social-field.facebook:hover{/* campo da rede social facebook hover*/
+    background: linear-gradient(to left, #1e3c72, #355d94);
+    letter-spacing: 0.2px;
+}
+.footer .social-field a i{/* espaço entre os icones */
+    margin: 0.5rem;
+    width: 15px;
+}   
+
