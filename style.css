@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap');
 
-* {padding: 0; margin: 0; border: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
+* {
+    padding: 0; 
+    margin: 0; 
+    border: 0; 
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif;}
 
 body { /* CORPO DA PAGINA TOTAL */
     background: linear-gradient(45deg, #8e2de2, #4a00e0);
@@ -79,9 +84,10 @@ form .input-field{/* em form na classe input-fiel:pego o primeiro filho e dou um
     transform: scaleX(1);/* comando scaleX 1 = no eixo X ele vai aparecer o efeito quando eu clicar */
 }
 .input-field input {
-    outline: none; /* é a borda da caixa do form */
+    outline: none; /*é a borda da caixa do form */
     font-size: 0.9rem;
     color: rgba(0, 0, 0, 0.7);
+    width: 100%;
 }
 .input-field input::placeholder { /* nome dentro do input/caixa onde escreve */
     color: rgba(0, 0, 0, 0.5);
